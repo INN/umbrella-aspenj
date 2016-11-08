@@ -1,0 +1,159 @@
+@import "_vars.less";
+
+/* ==========================================================================
+Custom Homepage Featured Section Styles
+========================================================================== */
+
+#dark-top h5 span.post-category-link a {
+  color: @gray;
+}
+#dark-top .side-featured article.featured-story {
+  border-top: solid 3px rgba(153, 153, 153, 0.5);
+}
+
+/* ==========================================================================
+Custom Hyperlink Styles
+========================================================================== */
+a,
+.largo-INN-RSS .widgettitle a,
+#site-footer h2.widgettitle,
+#site-footer h3.widgettitle,
+#site-footer li.menu-label,
+#site-footer p,
+#site-footer #ft-social li i {
+  color: @black;
+}
+a:hover,
+.largo-INN-RSS .widgettitle a:hover {
+  color: @gray;
+}
+.page .entry-content a,
+.single .entry-content a {
+  color: @blue;
+  text-decoration: none;
+}
+.single .entry-content a:hover,
+.page .entry-content a:hover {
+  color: @gray;
+  text-decoration: underline;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  background-color: @black;
+}
+.btn-primary:hover {
+  color: @gray;
+}
+
+/* ==========================================================================
+Custom Typography
+========================================================================== */
+body,
+p,
+#content ul,
+#content ol {
+  font-family: @serif;
+  font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6,
+#menu-footer-navigation li.menu-label {
+  font-family: @sans;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5 {
+  font-weight: 700;
+  font-family: @sans;
+  letter-spacing: 1px;
+}
+.footer-bg {
+  background-color: @white;
+}
+
+/* correct weights using brandfont this sans is too narrow/bold for */
+h5.byline {
+  font-weight:300;
+  font-family: @brandFont;
+  span.author {
+    font-weight:700;
+  }
+}
+.entry-content .byline {
+  span.author,
+  span.entry-date,
+  span.edit-link {
+  	font-weight:700;
+  }
+}
+
+body.normal.single-post article.post > header h5.top-date,
+body.normal.page article.post > header h5.top-date {
+  font-family: @brandFont;
+  font-weight: 300;
+}
+
+/* nice captions are nice */
+body.normal.single-post .hero p.wp-media-credit,
+body.normal.page .hero p.wp-media-credit {
+  font-family: @brandFont;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* helvetica overrides */
+.rss-subscribe-link,
+.tags,
+.pager,
+#menu-footer-navigation,
+#supplementary ul.menu,
+#site-footer input,
+#site-footer select,
+.navbar,
+input,
+button,
+select,
+textarea,
+.btn {
+  font-family: @brandFont;
+}
+
+/* ==========================================================================
+Custom Header (Centered Text)
+========================================================================== */
+
+header h1.branding span {
+  font-family: @brandFont;
+  font-weight:800;
+  font-size:8vw; // this is elastic, we constrain below
+  // NOT DISPLAYED if width is less 768px, no css needed
+  @media( min-width: 1200px ) { 
+    font-size: 8rem; 
+  }
+  text-align: center;
+  display: block;
+}
+
+/* ==========================================================================
+Custom Navigation
+========================================================================== */
+#main-nav {
+  .navbar-inner {
+    text-align: center;
+    font-family: @brandFont;
+    font-weight: 300;
+    .nav-shelf {
+      display: inline-block;
+    }
+    .nav {
+      display: inline-block;
+      float: none;
+      margin-top: 0.5em;
+    }
+  }
+}
