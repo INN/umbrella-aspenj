@@ -1,4 +1,13 @@
 <?php
+// This site is an INN Member
+if ( ! defined( 'INN_MEMBER' ) ) {
+    define( 'INN_MEMBER', true );
+}
+// This site is hosted by INN
+if ( ! defined( 'INN_HOSTED' ) ) {
+    define( 'INN_HOSTED', true );
+}
+
 
 /* This theme uses Adobe Typekit for a few custom fonts (https://typekit.com).
  * The ID is unique to this particular site so if you wanted to use this theme for another site
@@ -19,8 +28,8 @@ add_action( 'wp_head', 'aspen_typekit' );
 
 
 function aspen_search_filter($query) {
-	if ( !$query->is_admin && $query->is_search) {
-		$query->set('post_type', array('post', 'page') );
+	if ( ! $query->is_admin && $query->is_search ) {
+		$query->set( 'post_type', array( 'post', 'page' ) );
 	}
 	return $query;
 }
