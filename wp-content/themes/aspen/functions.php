@@ -46,7 +46,7 @@ function aspen_stylesheet() {
 add_action( 'wp_enqueue_scripts', 'aspen_stylesheet', 20 );
 
 function aspen_archive_rounduplink_title() {
-	$title = __( 'The Bucket: News of Interest to Aspenites', 'aspen' );
+	$title = __( 'The Bucket', 'aspen' );
 	return $title;
 }
 add_filter( 'largo_archive_rounduplink_title', 'aspen_archive_rounduplink_title' );
