@@ -56,4 +56,9 @@ module.exports = function(grunt) {
     });
 
     require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
+    // Build assets, docs and language files
+    grunt.registerTask('default', 'Build less files', [
+        'less',
+        'cssmin',
+    ]);
 }
