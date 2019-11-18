@@ -139,6 +139,29 @@ header h1.branding span {
   display: block;
 }
 
+.navbar.sticky-navbar .nav-right #header-extras .donate a span,
+.donate-btn {
+  background-color: @yellow;
+  color: @black;
+  &:hover {
+    background-color: lighten( @yellow, 20% );
+  }
+}
+.donate-btn {
+  a {
+    color: @black;
+  }
+  .icon-heart {
+    display: none;
+  }
+}
+@media ( max-width: 480px ) {
+  #header-extras li.donate {
+    display: block;
+    font-size: 14px;
+  }
+}
+
 /* ==========================================================================
 Custom Navigation
 ========================================================================== */
