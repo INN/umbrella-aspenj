@@ -33,7 +33,7 @@ function aspen_stylesheet() {
 	 */
 	wp_register_style(
 		'aspen-typekit',
-		'https://use.typekit.net/zni4nda.css',
+		'https://use.typekit.net/zni4nda.css'
 	);
 
 	$suffix = (LARGO_DEBUG)? '' : '.min';
@@ -41,7 +41,7 @@ function aspen_stylesheet() {
 		'aspen',
 		get_stylesheet_directory_uri().'/css/child' . $suffix . '.css',
 		array( 'aspen-typekit' ),
-		filemtime( get_stylesheet_directory().'/css/child' . $suffix . '.css' ),
+		filemtime( get_stylesheet_directory().'/css/child' . $suffix . '.css' )
 	);
 }
 add_action( 'wp_enqueue_scripts', 'aspen_stylesheet', 20 );
