@@ -1,3 +1,12 @@
+.widget.largo-donate .btn.btn-primary {
+  background-color: #faba33;
+  color: #333;
+  font-weight: 500;
+}
+.widget.largo-donate .btn.btn-primary:hover {
+  background-color: #fcdc97;
+  color: #333 !important;
+}
 /* ==========================================================================
 Custom Homepage Featured Section Styles
 ========================================================================== */
