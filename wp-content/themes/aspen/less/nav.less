@@ -1,0 +1,37 @@
+.subscribe-btn {
+    float: left;
+    margin: 5px 0 0 10px;
+    background: @blue;
+    font-size: 14px;
+    line-height: 2;
+    a {
+        padding: 24px 7px;
+        color: @white;
+        &:hover {
+            text-decoration: none;
+            color: @white;
+        }
+    }
+    &:hover {
+        background: darken(@blue, 5%);
+    }
+}
+.subscribe {
+    .subscribe-link {
+        span {
+            padding: 4px 8px;
+            color: @white;
+            background-color: @blue;
+            font-size: 16px;
+            &:hover {
+                background-color: darken(@blue, 5%);
+            }
+        }
+        &:hover {
+            background: transparent;
+        }
+    }
+    &:hover {
+        background: transparent;
+    }
+} 
