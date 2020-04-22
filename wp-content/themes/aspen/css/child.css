@@ -7,6 +7,39 @@
   background-color: #fcdc97;
   color: #333 !important;
 }
+.subscribe-btn {
+  float: left;
+  margin: 5px 0 0 10px;
+  background: #00a0d2;
+  font-size: 14px;
+  line-height: 2;
+}
+.subscribe-btn a {
+  padding: 24px 7px;
+  color: #FFF;
+}
+.subscribe-btn a:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+.subscribe-btn:hover {
+  background: #008db9;
+}
+.subscribe .subscribe-link span {
+  padding: 4px 8px;
+  color: #FFF;
+  background-color: #00a0d2;
+  font-size: 16px;
+}
+.subscribe .subscribe-link span:hover {
+  background-color: #008db9;
+}
+.subscribe .subscribe-link:hover {
+  background: transparent;
+}
+.subscribe:hover {
+  background: transparent;
+}
 /* ==========================================================================
 Custom Homepage Featured Section Styles
 ========================================================================== */

@@ -51,3 +51,29 @@ function aspen_archive_rounduplink_title() {
 	return $title;
 }
 add_filter( 'largo_archive_rounduplink_title', 'aspen_archive_rounduplink_title' );
+
+/**
+ * Display a subscribe button in the navbars
+ * 
+ * @param str $location The location that this button is placed
+ * 
+ * @return str The formatted subscribe button
+ */
+function aspen_subscribe_button( $location = null ) {
+
+    if( 'sticky' === $location ) {
+
+        printf( '<a class="subscribe-link" href="%1$s"><span>%2$s</span></a>',
+            esc_url( '\/subscribe\/' ),
+            esc_html( 'Subscribe' )
+        );
+
+    } else {
+
+        printf( '<div class="subscribe-btn"><a href="%1$s">%2$s</a></div>',
+            esc_url( '\/subscribe\/' ),
+            esc_html( 'Subscribe' )
+        );
+
+    }
+}
