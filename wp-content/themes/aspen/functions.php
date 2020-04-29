@@ -77,3 +77,18 @@ function aspen_subscribe_button( $location = null ) {
 
     }
 }
+
+/**
+ * Register a custom RSS feed for MailChimp (to include thumbnail images) for daily saved links from Link Roundups
+ * Feed address to use for MailChimp import will be http://myurl.com/?feed=daily-roundup
+ * And then you'll use the *|RSSITEM:IMAGE|* merge tag in your MailChimp template
+ * 
+ * @see https://github.com/INN/largo/blob/512da701664b329f2f92244bbe54880a6e146431/inc/custom-feeds.php#L16-L28
+ */
+function aspen_add_custom_daily_roundup_feed() {
+
+	add_filter('pre_option_rss_use_excerpt', '__return_zero');
+	load_template( get_stylesheet_directory() . '/feed-daily-roundup.php' );
+
+}
+add_feed( 'daily-roundup', 'aspen_add_custom_daily_roundup_feed' );
