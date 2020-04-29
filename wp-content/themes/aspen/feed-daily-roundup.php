@@ -17,18 +17,18 @@ function rss_date( $timestamp = null ) {
 }
 
 /**
- * Function to see if we want to grab posts from today after 12PM
- * or from yesterday after 12PM until today before 12PM
+ * Function to see if we want to grab posts from today after 12:30PM
+ * or from yesterday after 12PM until today before 12:30PM
  * 
  * @return Arr $query_time An array of arguments to use in the query_posts date_query arg.
  */
 function rss_posts_date_query() {
 
-    if( current_time( 'H' ) < 12 ) {
+    if( current_time( 'H:m' ) < '12:30' ) {
 
         $query_time = array(
             array(
-                'before' => date( 'm/d/Y 12:00:00' ),
+                'before' => date( 'm/d/Y 12:30:00' ),
                 'after' => date( 'm/d/Y 12:00:00', strtotime( '-1 days' ) ),
                 'inclusive' => false,
             )
@@ -38,7 +38,7 @@ function rss_posts_date_query() {
 
         $query_time = array(
             array(
-                'after' => date( 'm/d/Y 12:00:00' ),
+                'after' => date( 'm/d/Y 12:30:00' ),
                 'inclusive' => true,
             )
         );
