@@ -2,57 +2,23 @@
 /**
  * Template Name: Daily Roundup Feed
  * Copied from https://raw.githubusercontent.com/pastpages/Largo/master/feed-mailchimp.php
- * A feed with thumbnail images for MailChimp import that pulls in all saved links from 12PM to the following day 12PM
+ * A feed with thumbnail images for MailChimp import that pulls in all saved links
  * Feed address to use for MailChimp import will be http://myurl.com/?feed=daily-roundup
  *
  * @package Largo
  * @since 0.2
  */
 
-$numposts = -1;
+$numposts = 100;
 
 function rss_date( $timestamp = null ) {
   $timestamp = ($timestamp==null) ? time() : $timestamp;
   echo date(DATE_RSS, $timestamp);
 }
 
-/**
- * Function to see if we want to grab posts from today after 12:30PM
- * or from yesterday after 12:30PM until today before 12:30PM
- * 
- * @return Arr $query_time An array of arguments to use in the query_posts date_query arg.
- */
-function rss_posts_date_query() {
-
-    if( current_time( 'H:m' ) < '12:30' ) {
-
-        $query_time = array(
-            array(
-                'before' => date( 'm/d/Y 12:30:00' ),
-                'after' => date( 'm/d/Y 12:30:00', strtotime( '-1 days' ) ),
-                'inclusive' => false,
-            )
-        );
-
-    } else {
-
-        $query_time = array(
-            array(
-                'after' => date( 'm/d/Y 12:30:00' ),
-                'inclusive' => true,
-            )
-        );
-
-    }
-
-    return $query_time;
-
-}
-
 $posts = query_posts( array(
   'showposts' => $numposts,
   'post_type' => 'rounduplink',
-  'date_query' => rss_posts_date_query(),
 ) );
 
 $lastpost = $numposts - 1;
